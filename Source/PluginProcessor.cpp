@@ -109,26 +109,12 @@ void PrinceAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
-    //LSTM.reset();
-    //LSTM2.reset();
 
     // prepare resampler for target sample rate: 48 kHz
     constexpr double targetSampleRate = 44100.0;
     resampler.prepareWithTargetSampleRate ({ sampleRate, (uint32) samplesPerBlock, 2 }, targetSampleRate);
 
-    // load 44.1 kHz sample rate model
-    //MemoryInputStream jsonInputStream(BinaryData::od_json, BinaryData::od_jsonSize, false);
-    //nlohmann::json weights_json = nlohmann::json::parse(jsonInputStream.readEntireStreamAsString().toStdString());
-
-    //LSTM.load_json3(weights_json);
-    //LSTM2.load_json3(weights_json);
-
     setMode();
-
-    // set up DC blocker
-    //dcBlocker.coefficients = dsp::IIR::Coefficients<float>::makeHighPass(sampleRate, 35.0f);
-    //dsp::ProcessSpec spec{ sampleRate, static_cast<uint32> (samplesPerBlock), 2 };
-    //dcBlocker.prepare(spec);
 }
 
 void PrinceAudioProcessor::releaseResources()
@@ -175,12 +161,8 @@ void PrinceAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer&
 
     // Amp =============================================================================
     if (fw_state == 1) {
-		//Apply default gain
-        //buffer.applyGain(3.0);
-		
         // resample to target sample rate
         dsp::AudioBlock<float> block(buffer);
-        //auto block = dsp::AudioBlock<float>(buffer.getArrayOfWritePointers(), 1, numSamples);
         auto block44k = resampler.processIn(block);
 
         // Apply LSTM model
@@ -282,9 +264,7 @@ void PrinceAudioProcessor::setMode()
         LSTM2.reset();
         LSTM.load_json3(weights_json);
         LSTM2.load_json3(weights_json);
-
     }
-  
 }
 
 //==============================================================================
