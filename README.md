@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/GuitarML/PrincePedal/actions/workflows/cmake.yml/badge.svg)](https://github.com/GuitarML/PrincePedal/actions/workflows/cmake.yml) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Downloads](https://img.shields.io/github/downloads/GuitarML/PrincePedal/total)](https://somsubhra.github.io/github-release-stats/?username=GuitarML&repository=PrincePedal&page=1&per_page=30)
 
-The Prince is a guitar plugin of my homebuilt Prince of Tone style pedal. The graphics were created from actual photos of my pedal using a "stop motion" technique (not perfect but it works!). The plugin features three GuitarML models conditioned on the Gain and Tone knobs (one each for Overdrive, Boost, and Distortion modes). The original Prince of Tone pedal is essentially 1/2 of the highly sought after King of Tone by AnalogMan. 
+The Prince is a guitar plugin of my homebuilt Prince of Tone style pedal. The graphics were created from actual photos of my pedal using a "stop motion" technique (not perfect but it works!). The plugin features three GuitarML models conditioned on the Gain and Tone knobs, one each for Overdrive, Boost, and Distortion modes. The original Prince of Tone pedal is essentially 1/2 of the highly sought after King of Tone by AnalogMan. 
 
 ![app](https://github.com/GuitarML/PrincePedal/blob/main/resources/background.png)
 
