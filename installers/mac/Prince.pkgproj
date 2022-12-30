@@ -79,7 +79,7 @@
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../../bin/Mac/TS-M1N3.component</string>
+															<string>../../bin/Mac/Prince.component</string>
 															<key>PATH_TYPE</key>
 															<integer>1</integer>
 															<key>PERMISSIONS</key>
@@ -533,7 +533,7 @@
 				<key>FOLLOW_SYMBOLIC_LINKS</key>
 				<false/>
 				<key>IDENTIFIER</key>
-				<string>com.GuitarML.TS-M1N3.TS-M1N3AU</string>
+				<string>com.GuitarML.Prince.PrinceAU</string>
 				<key>LOCATION</key>
 				<integer>0</integer>
 				<key>NAME</key>
@@ -631,7 +631,7 @@
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../../bin/Mac/TS-M1N3.vst3</string>
+															<string>../../bin/Mac/Prince.vst3</string>
 															<key>PATH_TYPE</key>
 															<integer>1</integer>
 															<key>PERMISSIONS</key>
@@ -1070,7 +1070,7 @@
 				<key>FOLLOW_SYMBOLIC_LINKS</key>
 				<false/>
 				<key>IDENTIFIER</key>
-				<string>com.GuitarML.TS-M1N3.TS-M1N3VST3</string>
+				<string>com.GuitarML.Prince.PrinceVST3</string>
 				<key>LOCATION</key>
 				<integer>0</integer>
 				<key>NAME</key>
@@ -1155,7 +1155,7 @@
 																	<key>GID</key>
 																	<integer>80</integer>
 																	<key>PATH</key>
-																	<string>../../build-aax/TS-M1N3_artefacts/Release/AAX/TS-M1N3.aaxplugin</string>
+																	<string>../../build-aax/Prince_artefacts/Release/AAX/Prince.aaxplugin</string>
 																	<key>PATH_TYPE</key>
 																	<integer>1</integer>
 																	<key>PERMISSIONS</key>
@@ -1623,7 +1623,7 @@
 				<key>FOLLOW_SYMBOLIC_LINKS</key>
 				<false/>
 				<key>IDENTIFIER</key>
-				<string>com.GuitarML.TS-M1N3.TS-M1N3AAX</string>
+				<string>com.GuitarML.Prince.PrinceAAX</string>
 				<key>LOCATION</key>
 				<integer>0</integer>
 				<key>NAME</key>
@@ -1856,7 +1856,7 @@
 						<key>LANGUAGE</key>
 						<string>English</string>
 						<key>VALUE</key>
-						<string>TS-M1N3</string>
+						<string>Prince</string>
 					</dict>
 				</array>
 			</dict>
@@ -2050,7 +2050,7 @@
 				</dict>
 			</array>
 			<key>NAME</key>
-			<string>TS-M1N3</string>
+			<string>Prince</string>
 			<key>PAYLOAD_ONLY</key>
 			<false/>
 			<key>TREAT_MISSING_PRESENTATION_DOCUMENTS_AS_WARNING</key>

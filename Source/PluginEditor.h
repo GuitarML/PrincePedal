@@ -18,13 +18,13 @@
 //==============================================================================
 /**
 */
-class TSM1N3AudioProcessorEditor  : public AudioProcessorEditor,
+class PrinceAudioProcessorEditor  : public AudioProcessorEditor,
                                       private Button::Listener,
                                       private Slider::Listener
 {
 public:
-    TSM1N3AudioProcessorEditor (TSM1N3AudioProcessor&);
-    ~TSM1N3AudioProcessorEditor();
+    PrinceAudioProcessorEditor (PrinceAudioProcessor&);
+    ~PrinceAudioProcessorEditor();
 
     //==============================================================================
     void paint (Graphics&) override;
@@ -43,7 +43,7 @@ public:
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    TSM1N3AudioProcessor& processor;
+    PrinceAudioProcessor& processor;
 
     Image background = ImageCache::getFromMemory(BinaryData::background_png, BinaryData::background_pngSize);
 
@@ -69,5 +69,5 @@ public:
     std::unique_ptr <AudioProcessorValueTreeState::SliderAttachment> toneSliderAttach;
     std::unique_ptr <AudioProcessorValueTreeState::SliderAttachment> masterSliderAttach;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TSM1N3AudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PrinceAudioProcessorEditor)
 };

@@ -24,12 +24,12 @@
 
 
 //==============================================================================
-class TSM1N3AudioProcessor  : public AudioProcessor
+class PrinceAudioProcessor  : public AudioProcessor
 {
 public:
     //==============================================================================
-    TSM1N3AudioProcessor();
-    ~TSM1N3AudioProcessor();
+    PrinceAudioProcessor();
+    ~PrinceAudioProcessor();
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -104,8 +104,8 @@ private:
 
     chowdsp::ResampledProcess<chowdsp::ResamplingTypes::SRCResampler<>> resampler;
 
-    //dsp::IIR::Filter<float> dcBlocker;  // Unused for TS-M1N3 plugin, leaving commented as template for future plugins
+    //dsp::IIR::Filter<float> dcBlocker;  // Unused for Prince plugin, leaving commented as template for future plugins
 
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TSM1N3AudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PrinceAudioProcessor)
 };

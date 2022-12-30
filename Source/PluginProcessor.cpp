@@ -14,7 +14,7 @@
 #include <fstream>
 
 //==============================================================================
-TSM1N3AudioProcessor::TSM1N3AudioProcessor()
+PrinceAudioProcessor::PrinceAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
     : AudioProcessor(BusesProperties()
 #if ! JucePlugin_IsMidiEffect
@@ -38,17 +38,17 @@ TSM1N3AudioProcessor::TSM1N3AudioProcessor()
 }
 
 
-TSM1N3AudioProcessor::~TSM1N3AudioProcessor()
+PrinceAudioProcessor::~PrinceAudioProcessor()
 {
 }
 
 //==============================================================================
-const String TSM1N3AudioProcessor::getName() const
+const String PrinceAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
 
-bool TSM1N3AudioProcessor::acceptsMidi() const
+bool PrinceAudioProcessor::acceptsMidi() const
 {
    #if JucePlugin_WantsMidiInput
     return true;
@@ -57,7 +57,7 @@ bool TSM1N3AudioProcessor::acceptsMidi() const
    #endif
 }
 
-bool TSM1N3AudioProcessor::producesMidi() const
+bool PrinceAudioProcessor::producesMidi() const
 {
    #if JucePlugin_ProducesMidiOutput
     return true;
@@ -66,7 +66,7 @@ bool TSM1N3AudioProcessor::producesMidi() const
    #endif
 }
 
-bool TSM1N3AudioProcessor::isMidiEffect() const
+bool PrinceAudioProcessor::isMidiEffect() const
 {
    #if JucePlugin_IsMidiEffect
     return true;
@@ -75,37 +75,37 @@ bool TSM1N3AudioProcessor::isMidiEffect() const
    #endif
 }
 
-double TSM1N3AudioProcessor::getTailLengthSeconds() const
+double PrinceAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
 }
 
-int TSM1N3AudioProcessor::getNumPrograms()
+int PrinceAudioProcessor::getNumPrograms()
 {
     return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
                 // so this should be at least 1, even if you're not really implementing programs.
 }
 
-int TSM1N3AudioProcessor::getCurrentProgram()
+int PrinceAudioProcessor::getCurrentProgram()
 {
     return 0;
 }
 
-void TSM1N3AudioProcessor::setCurrentProgram (int index)
+void PrinceAudioProcessor::setCurrentProgram (int index)
 {
 }
 
-const String TSM1N3AudioProcessor::getProgramName (int index)
+const String PrinceAudioProcessor::getProgramName (int index)
 {
     return {};
 }
 
-void TSM1N3AudioProcessor::changeProgramName (int index, const String& newName)
+void PrinceAudioProcessor::changeProgramName (int index, const String& newName)
 {
 }
 
 //==============================================================================
-void TSM1N3AudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void PrinceAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
@@ -131,14 +131,14 @@ void TSM1N3AudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock
     //dcBlocker.prepare(spec);
 }
 
-void TSM1N3AudioProcessor::releaseResources()
+void PrinceAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool TSM1N3AudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+bool PrinceAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
   #if JucePlugin_IsMidiEffect
     ignoreUnused (layouts);
@@ -162,7 +162,7 @@ bool TSM1N3AudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) c
 #endif
 
 
-void TSM1N3AudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
+void PrinceAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
 {
     ScopedNoDenormals noDenormals;
 
@@ -212,18 +212,18 @@ void TSM1N3AudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer&
 }
 
 //==============================================================================
-bool TSM1N3AudioProcessor::hasEditor() const
+bool PrinceAudioProcessor::hasEditor() const
 {
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-AudioProcessorEditor* TSM1N3AudioProcessor::createEditor()
+AudioProcessorEditor* PrinceAudioProcessor::createEditor()
 {
-    return new TSM1N3AudioProcessorEditor (*this);
+    return new PrinceAudioProcessorEditor (*this);
 }
 
 //==============================================================================
-void TSM1N3AudioProcessor::getStateInformation (MemoryBlock& destData)
+void PrinceAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
@@ -236,7 +236,7 @@ void TSM1N3AudioProcessor::getStateInformation (MemoryBlock& destData)
     copyXmlToBinary (*xml, destData);
 }
 
-void TSM1N3AudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void PrinceAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
@@ -251,13 +251,13 @@ void TSM1N3AudioProcessor::setStateInformation (const void* data, int sizeInByte
             current_model_index = xmlState->getIntAttribute ("current_tone");
             setMode();
             fw_state = xmlState->getBoolAttribute ("fw_state");
-            if (auto* editor = dynamic_cast<TSM1N3AudioProcessorEditor*> (getActiveEditor()))
+            if (auto* editor = dynamic_cast<PrinceAudioProcessorEditor*> (getActiveEditor()))
                 editor->resetImages();
         }
     }
 }
 
-void TSM1N3AudioProcessor::setMode()
+void PrinceAudioProcessor::setMode()
 {
     if (current_model_index ==0) {
         MemoryInputStream jsonInputStream(BinaryData::od_json, BinaryData::od_jsonSize, false);
@@ -291,5 +291,5 @@ void TSM1N3AudioProcessor::setMode()
 // This creates new instances of the plugin..
 AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new TSM1N3AudioProcessor();
+    return new PrinceAudioProcessor();
 }

@@ -1,9 +1,9 @@
 #define MyAppPublisher "GuitarML"
 #define MyAppURL "https://guitarml.com"
-#define MyAppName "TS-M1N3"
+#define MyAppName "Prince"
 
 [Setup]
-AppName=TS-M1N3
+AppName=Prince
 AppVersion=##APPVERSION##
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
@@ -13,12 +13,12 @@ DisableProgramGroupPage=yes
 DisableWelcomePage=no
 DisableDirPage=yes
 DefaultDirName={commoncf64}
-DefaultGroupName=TS-M1N3
-OutputBaseFilename="TS-M1N3-Win-##APPVERSION##"
+DefaultGroupName=Prince
+OutputBaseFilename="Prince-Win-##APPVERSION##"
 OutputDir=.
 LicenseFile=../../LICENSE.txt
-SetupIconFile=../../resources/TS-M1N3.ico
-UninstallDisplayIcon=../../resources/TS-M1N3.ico
+SetupIconFile=../../resources/Prince.ico
+UninstallDisplayIcon=../../resources/Prince.ico
 UninstallFilesDir={commoncf64}\GuitarML\{#MyAppName}
 Compression=lzma
 SolidCompression=yes
@@ -33,8 +33,8 @@ Name: "VST3_64"; Description: "VST3 Plugin 64-bit"; Types: full
 Name: "AAX"; Description: "AAX Plugin"; Types: full
 
 [Files]
-Source: "../../bin/Win64/TS-M1N3.vst3"; DestDir: "{code:GetDir|VST3_64}"; Components: VST3_64; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "../../build-aax/TS-M1N3_artefacts/Release/AAX/TS-M1N3.aaxplugin"; DestDir: "{code:GetDir|AAX}"; Components: AAX; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "../../bin/Win64/Prince.vst3"; DestDir: "{code:GetDir|VST3_64}"; Components: VST3_64; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "../../build-aax/Prince_artefacts/Release/AAX/Prince.aaxplugin"; DestDir: "{code:GetDir|AAX}"; Components: AAX; Flags: ignoreversion recursesubdirs createallsubdirs
 
 
 [Code]

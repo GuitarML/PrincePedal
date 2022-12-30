@@ -2,9 +2,8 @@
 # This script builds a .deb package for installing the VST3, and LV2 plugins on Linux
 
 # Set the app name and version here
-app_name=TS-M1N3
-version=1.2
-
+app_name=Prince
+version=1.0
 
 # 1. Create the package directory structure and control file
 

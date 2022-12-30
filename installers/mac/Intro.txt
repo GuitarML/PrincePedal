@@ -1,1 +1,1 @@
-This application will install the TS-M1N3 audio plugin version ##APPVERSION## to your computer.
+This application will install the Prince audio plugin version ##APPVERSION## to your computer.

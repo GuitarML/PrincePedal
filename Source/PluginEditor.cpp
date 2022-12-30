@@ -16,7 +16,7 @@
 
 
 //==============================================================================
-TSM1N3AudioProcessorEditor::TSM1N3AudioProcessorEditor (TSM1N3AudioProcessor& p)
+PrinceAudioProcessorEditor::PrinceAudioProcessorEditor (PrinceAudioProcessor& p)
     : AudioProcessorEditor (&p), processor (p)
 {
     // Make sure that before the constructor has finished, you've set the
@@ -84,7 +84,7 @@ TSM1N3AudioProcessorEditor::TSM1N3AudioProcessorEditor (TSM1N3AudioProcessor& p)
     resetImages();
 }
 
-TSM1N3AudioProcessorEditor::~TSM1N3AudioProcessorEditor()
+PrinceAudioProcessorEditor::~PrinceAudioProcessorEditor()
 {
     ampGainKnob.setLookAndFeel(nullptr);
     ampToneKnob.setLookAndFeel(nullptr);
@@ -92,7 +92,7 @@ TSM1N3AudioProcessorEditor::~TSM1N3AudioProcessorEditor()
 }
 
 //==============================================================================
-void TSM1N3AudioProcessorEditor::paint (Graphics& g)
+void PrinceAudioProcessorEditor::paint (Graphics& g)
 {
     // Workaround for graphics on Windows builds (clipping code doesn't work correctly on Windows)
     #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
@@ -105,7 +105,7 @@ void TSM1N3AudioProcessorEditor::paint (Graphics& g)
    
 }
 
-void TSM1N3AudioProcessorEditor::resized()
+void PrinceAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
@@ -120,7 +120,7 @@ void TSM1N3AudioProcessorEditor::resized()
     versionLabel.setBounds(302, 488, 60, 10);
 }
 
-void TSM1N3AudioProcessorEditor::colorSelectClicked() {
+void PrinceAudioProcessorEditor::colorSelectClicked() {
     if (processor.current_model_index == 0) {
         processor.current_model_index = 1;
         processor.fromUpDown = 0;
@@ -141,7 +141,7 @@ void TSM1N3AudioProcessorEditor::colorSelectClicked() {
     repaint();
 }
 
-void TSM1N3AudioProcessorEditor::buttonClicked(juce::Button* button)
+void PrinceAudioProcessorEditor::buttonClicked(juce::Button* button)
 {
     if (processor.current_model_index == 0) {
         processor.current_model_index = 1;
@@ -159,12 +159,12 @@ void TSM1N3AudioProcessorEditor::buttonClicked(juce::Button* button)
         processor.fromUpDown = 1;
     }
     processor.setMode();
-    resetImages(); // Resets the Toggle Switch and LED image based on current settings
+    resetImages(); // Resets the Toggle Switch based on current settings
     repaint();
 }
 
 
-void TSM1N3AudioProcessorEditor::sliderValueChanged(Slider* slider)
+void PrinceAudioProcessorEditor::sliderValueChanged(Slider* slider)
 {
     // Amp
     /*
@@ -178,13 +178,13 @@ void TSM1N3AudioProcessorEditor::sliderValueChanged(Slider* slider)
 }
 
 
-void TSM1N3AudioProcessorEditor::resetImages()
+void PrinceAudioProcessorEditor::resetImages()
 {
     if (processor.current_model_index == 0) {
         odFootSw.setImages(true, true, true,
-            ImageCache::getFromMemory(BinaryData::sw1_png, BinaryData::sw1_pngSize), 1.0, Colours::transparentWhite,
+            ImageCache::getFromMemory(BinaryData::sw3_png, BinaryData::sw3_pngSize), 1.0, Colours::transparentWhite,
             Image(), 1.0, Colours::transparentWhite,
-            ImageCache::getFromMemory(BinaryData::sw1_png, BinaryData::sw1_pngSize), 1.0, Colours::transparentWhite,
+            ImageCache::getFromMemory(BinaryData::sw3_png, BinaryData::sw3_pngSize), 1.0, Colours::transparentWhite,
             0.0);
     }
     else if (processor.current_model_index == 1) {
@@ -196,9 +196,9 @@ void TSM1N3AudioProcessorEditor::resetImages()
     }
     else {
         odFootSw.setImages(true, true, true,
-            ImageCache::getFromMemory(BinaryData::sw3_png, BinaryData::sw3_pngSize), 1.0, Colours::transparentWhite,
+            ImageCache::getFromMemory(BinaryData::sw1_png, BinaryData::sw1_pngSize), 1.0, Colours::transparentWhite,
             Image(), 1.0, Colours::transparentWhite,
-            ImageCache::getFromMemory(BinaryData::sw3_png, BinaryData::sw3_pngSize), 1.0, Colours::transparentWhite,
+            ImageCache::getFromMemory(BinaryData::sw1_png, BinaryData::sw1_pngSize), 1.0, Colours::transparentWhite,
             0.0);
     }
 }
