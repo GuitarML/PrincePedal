@@ -22,6 +22,8 @@ For the training data, five steps for the gain and tone knobs were recorded (0.0
 
 ## Pedal Build and Differences
 
+![app](https://github.com/GuitarML/PrincePedal/blob/main/resources/build.jpg)
+
 I built this pedal in a 1590B enclosure with custom "paint pour" technique by a talented local artist. The circuit was soldered on a 2 sided through hole PCB, and is powered by a typical 9v power supply (no battery). The circuit design is a unique take on the Blues Breaker style circuit with two op amp gain stages and silicon clipping diodes. The three modes are determined by the symmetric silicon clipping diodes. Overdrive uses 4 "soft clipping" diodes within the second op amp feedback stage for a smoother sound. Distortion uses two "hard clipping" diodes after the second op amp, clipped to reference voltage. Boost removes the clipping diodes, for a more open sound with slight distortion from the op amp. 
 
 There are several difference between the Prince of Tone pedal by AnalogMan and my homebuilt clone, mainly due to available parts:
