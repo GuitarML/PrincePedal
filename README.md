@@ -1,4 +1,4 @@
-# TS-M1N3
+# The Prince
 
 [![CI](https://github.com/GuitarML/PrincePedal/actions/workflows/cmake.yml/badge.svg)](https://github.com/GuitarML/PrincePedal/actions/workflows/cmake.yml) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Downloads](https://img.shields.io/github/downloads/GuitarML/PrincePedal/total)](https://somsubhra.github.io/github-release-stats/?username=GuitarML&repository=PrincePedal&page=1&per_page=30)
 
