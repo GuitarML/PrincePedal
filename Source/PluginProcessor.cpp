@@ -109,19 +109,21 @@ void TSM1N3AudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
-    LSTM.reset();
-    LSTM2.reset();
+    //LSTM.reset();
+    //LSTM2.reset();
 
     // prepare resampler for target sample rate: 48 kHz
     constexpr double targetSampleRate = 44100.0;
     resampler.prepareWithTargetSampleRate ({ sampleRate, (uint32) samplesPerBlock, 2 }, targetSampleRate);
 
     // load 44.1 kHz sample rate model
-    MemoryInputStream jsonInputStream(BinaryData::model_ts9_48k_cond2_json, BinaryData::model_ts9_48k_cond2_jsonSize, false);
-    nlohmann::json weights_json = nlohmann::json::parse(jsonInputStream.readEntireStreamAsString().toStdString());
+    //MemoryInputStream jsonInputStream(BinaryData::od_json, BinaryData::od_jsonSize, false);
+    //nlohmann::json weights_json = nlohmann::json::parse(jsonInputStream.readEntireStreamAsString().toStdString());
 
-    LSTM.load_json3(weights_json);
-    LSTM2.load_json3(weights_json);
+    //LSTM.load_json3(weights_json);
+    //LSTM2.load_json3(weights_json);
+
+    setMode();
 
     // set up DC blocker
     //dcBlocker.coefficients = dsp::IIR::Coefficients<float>::makeHighPass(sampleRate, 35.0f);
@@ -262,24 +264,24 @@ void TSM1N3AudioProcessor::setMode()
         nlohmann::json weights_json = nlohmann::json::parse(jsonInputStream.readEntireStreamAsString().toStdString());
         LSTM.reset();
         LSTM2.reset();
-        LSTM.load_json(weights_json);
-        LSTM2.load_json(weights_json);
+        LSTM.load_json3(weights_json);
+        LSTM2.load_json3(weights_json);
 
     } else if (current_model_index == 1) {
         MemoryInputStream jsonInputStream(BinaryData::boost_json, BinaryData::boost_jsonSize, false);
         nlohmann::json weights_json = nlohmann::json::parse(jsonInputStream.readEntireStreamAsString().toStdString());
         LSTM.reset();
         LSTM2.reset();
-        LSTM.load_json(weights_json);
-        LSTM2.load_json(weights_json);
+        LSTM.load_json3(weights_json);
+        LSTM2.load_json3(weights_json);
 
     } else if (current_model_index == 2) {
         MemoryInputStream jsonInputStream(BinaryData::dist_json, BinaryData::dist_jsonSize, false);
         nlohmann::json weights_json = nlohmann::json::parse(jsonInputStream.readEntireStreamAsString().toStdString());
         LSTM.reset();
         LSTM2.reset();
-        LSTM.load_json(weights_json);
-        LSTM2.load_json(weights_json);
+        LSTM.load_json3(weights_json);
+        LSTM2.load_json3(weights_json);
 
     }
   

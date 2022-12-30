@@ -31,6 +31,7 @@ public:
     void resized() override;
 
     void resetImages();
+    void colorSelectClicked();
 
     myLookAndFeel blackHexKnobLAF;
     myLookAndFeel gainLAF;

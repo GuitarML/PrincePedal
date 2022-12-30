@@ -120,7 +120,7 @@ void TSM1N3AudioProcessorEditor::resized()
     versionLabel.setBounds(302, 488, 60, 10);
 }
 
-void ChameleonAudioProcessorEditor::colorSelectClicked() {
+void TSM1N3AudioProcessorEditor::colorSelectClicked() {
     if (processor.current_model_index == 0) {
         processor.current_model_index = 1;
         processor.fromUpDown = 0;
@@ -181,21 +181,21 @@ void TSM1N3AudioProcessorEditor::sliderValueChanged(Slider* slider)
 void TSM1N3AudioProcessorEditor::resetImages()
 {
     if (processor.current_model_index == 0) {
-        colorSelectButton.setImages(true, true, true,
+        odFootSw.setImages(true, true, true,
             ImageCache::getFromMemory(BinaryData::sw1_png, BinaryData::sw1_pngSize), 1.0, Colours::transparentWhite,
             Image(), 1.0, Colours::transparentWhite,
             ImageCache::getFromMemory(BinaryData::sw1_png, BinaryData::sw1_pngSize), 1.0, Colours::transparentWhite,
             0.0);
     }
     else if (processor.current_model_index == 1) {
-        colorSelectButton.setImages(true, true, true,
+        odFootSw.setImages(true, true, true,
             ImageCache::getFromMemory(BinaryData::sw2_png, BinaryData::sw2_pngSize), 1.0, Colours::transparentWhite,
             Image(), 1.0, Colours::transparentWhite,
             ImageCache::getFromMemory(BinaryData::sw2_png, BinaryData::sw2_pngSize), 1.0, Colours::transparentWhite,
             0.0);
     }
     else {
-        colorSelectButton.setImages(true, true, true,
+        odFootSw.setImages(true, true, true,
             ImageCache::getFromMemory(BinaryData::sw3_png, BinaryData::sw3_pngSize), 1.0, Colours::transparentWhite,
             Image(), 1.0, Colours::transparentWhite,
             ImageCache::getFromMemory(BinaryData::sw3_png, BinaryData::sw3_pngSize), 1.0, Colours::transparentWhite,
