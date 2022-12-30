@@ -55,13 +55,8 @@ private:
     
     virtual void buttonClicked(Button* button) override;
 
-    //void updateToggleState(juce::Button* button, juce::String name);
     virtual void sliderValueChanged(Slider* slider) override;
 
-    //AudioProcessorParameter* getParameter(const String& paramId);
-
-    //float getParameterValue(const String& paramId);
-    //void setParameterValue(const String& paramId, float value);
 
 
 public:

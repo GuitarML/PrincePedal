@@ -37,14 +37,6 @@ PrinceAudioProcessorEditor::PrinceAudioProcessorEditor (PrinceAudioProcessor& p)
         0.0);
     odFootSw.addListener(this);
 
-    //addAndMakeVisible(odLED);
-    //odLED.setImages(true, true, true,
-    //    ImageCache::getFromMemory(BinaryData::led_red_on_png, BinaryData::led_red_on_pngSize), 1.0, Colours::transparentWhite,
-    //    Image(), 1.0, Colours::transparentWhite,
-    //    ImageCache::getFromMemory(BinaryData::led_red_on_png, BinaryData::led_red_on_pngSize), 1.0, Colours::transparentWhite,
-    //    0.0);
-    //odLED.addListener(this);
-
     gainSliderAttach = std::make_unique<AudioProcessorValueTreeState::SliderAttachment>(processor.treeState, GAIN_ID, ampGainKnob);
     addAndMakeVisible(ampGainKnob);
     ampGainKnob.setLookAndFeel(&gainLAF);
@@ -166,15 +158,7 @@ void PrinceAudioProcessorEditor::buttonClicked(juce::Button* button)
 
 void PrinceAudioProcessorEditor::sliderValueChanged(Slider* slider)
 {
-    // Amp
-    /*
-    if (slider == &ampGainKnob)
-        processor.setDrive(slider->getValue());
-    else if (slider == &ampMasterKnob)
-        processor.setMaster(slider->getValue());
-    else if (slider == &ampToneKnob) 
-        processor.setTone(slider->getValue());
-        */
+
 }
 
 

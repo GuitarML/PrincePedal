@@ -63,23 +63,11 @@ public:
     //==============================================================================
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
-    
-    //float convertLogScale(float in_value, float x_min, float x_max, float y_min, float y_max);
-
-    //float decibelToLinear(float dbValue);
-
-    //void setDrive(float paramDrive);
-    //void setTone(float paramTone);
-    //void setMaster(float db_ampMaster);
 
     void setMode();
 
     // Pedal/amp states
     int fw_state = 1; // 0 = off, 1 = on
-    //float driveValue = 0.5;
-    //float toneValue = 0.5;
-    //float masterValue = 0.5;
-    //float previousMasterValue = 0.5;
 
     bool lstm_state = true;
     int current_model_index = 0;
@@ -92,10 +80,6 @@ public:
 
 private:
 
-    //float driveValue = 0.5;
-    //float toneValue = 0.5;
-    //float masterValue = 0.5;
-
     std::atomic<float>* driveParam = nullptr;
     std::atomic<float>* toneParam = nullptr;
     std::atomic<float>* masterParam = nullptr;
@@ -103,8 +87,6 @@ private:
     float previousMasterValue = 0.5;
 
     chowdsp::ResampledProcess<chowdsp::ResamplingTypes::SRCResampler<>> resampler;
-
-    //dsp::IIR::Filter<float> dcBlocker;  // Unused for Prince plugin, leaving commented as template for future plugins
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PrinceAudioProcessor)
