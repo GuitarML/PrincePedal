@@ -66,15 +66,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         -DCMAKE_XCODE_ATTRIBUTE_OTHER_CODE_SIGN_FLAGS="--timestamp" \
         -DMACOS_RELEASE=ON
 
-    cmake --build build-aax --config $build_config --target TS-M1N3_AAX | xcpretty
+    cmake --build build-aax --config $build_config --target Prince_AAX | xcpretty
 
 else # Windows
     cmake -Bbuild-aax -G"Visual Studio 16 2019" -A x64
-    cmake --build build-aax --config $build_config --parallel $(nproc) --target TS-M1N3_AAX
+    cmake --build build-aax --config $build_config --parallel $(nproc) --target Prince_AAX
 fi
 
 # sign with PACE
-aax_location=build-aax/TS-M1N3_artefacts/$build_config/AAX/TS-M1N3.aaxplugin
+aax_location=build-aax/Prince_artefacts/$build_config/AAX/Prince.aaxplugin
 wcguid="E9587400-8ED1-11EC-AA74-00505692AD3E" # Update
 if [[ "$OSTYPE" == "darwin"* ]]; then
     /Applications/PACEAntiPiracy/Eden/Fusion/Current/bin/wraptool sign --verbose \
@@ -98,18 +98,18 @@ else # Windows
         --in $aax_location \
         --out $aax_location
         
-    wraptool verify --verbose --in $aax_location/Contents/x64/TS-M1N3.aaxplugin
+    wraptool verify --verbose --in $aax_location/Contents/x64/Prince.aaxplugin
 fi
 
 # reset AAX SDK field...
 #sed_cmakelist "s~juce_set_aax_sdk_path.*~# juce_set_aax_sdk_path(NONE)~"
 
-rm -rf "$aax_target_dir/TS-M1N3.aaxplugin"
-cp -R "$aax_location" "$aax_target_dir/TS-M1N3.aaxplugin"
+rm -rf "$aax_target_dir/Prince.aaxplugin"
+cp -R "$aax_location" "$aax_target_dir/Prince.aaxplugin"
 
 if [[ "$*" = *deploy* ]]; then
     set +e
 
-    ssh "smartguitarml@gmail.com" "rm -r ~/aax_builds/${TARGET_DIR}/TS-M1N3.aaxplugin"
+    ssh "smartguitarml@gmail.com" "rm -r ~/aax_builds/${TARGET_DIR}/Prince.aaxplugin"
     scp -r "$aax_location" "smartguitarml@gmail.com:~/aax_builds/${TARGET_DIR}/"
 fi

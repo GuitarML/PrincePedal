@@ -25,7 +25,7 @@ wait
 
 # copy builds to bin
 mkdir -p bin/Win64
-declare -a plugins=("TS-M1N3")
+declare -a plugins=("Prince")
 for plugin in "${plugins[@]}"; do
     cp -R build/${plugin}_artefacts/Release/VST3/${plugin}.vst3 bin/Win64/${plugin}.vst3
 done
@@ -37,8 +37,8 @@ done
 VERSION=$(cut -f 2 -d '=' <<< "$(grep 'CMAKE_PROJECT_VERSION:STATIC' build/CMakeCache.txt)")
 (
     cd bin
-    rm -f "TS-M1N3-Win64-${VERSION}.zip"
-    tar -a -c -f "TS-M1N3-Win64-${VERSION}.zip" Win64
+    rm -f "Prince-Win64-${VERSION}.zip"
+    tar -a -c -f "Prince-Win64-${VERSION}.zip" Win64
 )
 
 # create installer
