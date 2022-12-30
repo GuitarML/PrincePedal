@@ -22,6 +22,8 @@ The plugin uses [RTNeural](https://github.com/jatinchowdhury18/RTNeural), which 
 
 For the training data, five steps for the gain and tone knobs were recorded (0.0, 0.25, 0.50, 0.75, 1.0), for three modes for a total of 75 wav samples at 2 minutes 20 seconds each. The Proteus capture utility was used for training, with a modified config for two knobs (Gain and Tone). The training data was normalized, so the volume on the plugin is more consistent between modes than on the actual pedal.
 
+Note: There is no stompswitch bypass button, which is different from other pedal style GuitarML plugins, it is simply part of the background image. Use the DAW to control bypassing the plugin.
+
 ## Pedal Build and Differences
 
 ![app](https://github.com/GuitarML/PrincePedal/blob/main/resources/build.jpg)
