@@ -1,0 +1,30 @@
+juce_add_binary_data(BinaryData SOURCES
+    footswitch_down.png
+    footswitch_up.png
+    knob2.png
+    led_red_off.png
+    led_red_on.png
+    logo.png
+    ts_background_black.jpg
+    TS-M1N3.ico
+    TS-M1N3.png
+    ../models/model_ts9_48k_cond2.json
+    ../models/model_ts9_cond2.json
+
+    ../models/od.json
+    ../models/boost.json
+    ../models/dist.json
+
+    gain.png
+    vol.png
+    tone.png
+    sw1.png
+    sw2.png
+    sw3.png
+    background.png
+
+)
+
+# Need to build BinaryData with -fPIC flag on Linux
+set_target_properties(BinaryData PROPERTIES
+    POSITION_INDEPENDENT_CODE TRUE)
