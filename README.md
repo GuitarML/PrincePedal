@@ -4,7 +4,7 @@
 
 The Prince is a guitar plugin of my homebuilt Prince of Tone style pedal. The graphics were created from actual photos of my pedal using a "stop motion" technique (not perfect but it works!). The plugin features three GuitarML neural network models conditioned on the Gain and Tone knobs, one each for Overdrive, Boost, and Distortion modes. The original Prince of Tone pedal is essentially 1/2 of the highly sought after King of Tone by AnalogMan. 
 
-This plugin is intended as an experiment and an example of how a pedal/amp builder (hobbiest or professional) can faithfully recreate their work in the digital world.
+This plugin is intended as an experiment and an example of how a pedal/amp builder (hobbiest or professional) can faithfully recreate their work in the digital world using neural networks.
 
 ![app](https://github.com/GuitarML/PrincePedal/blob/main/resources/background.png)
 
