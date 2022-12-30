@@ -117,7 +117,7 @@ void PrinceAudioProcessorEditor::resized()
 
     //odLED.setBounds(152, 315, 40, 40);
     odFootSw.setBounds(240, 195, 45, 70);
-    versionLabel.setBounds(302, 488, 60, 10);
+    versionLabel.setBounds(335, 520, 60, 10);
 }
 
 void PrinceAudioProcessorEditor::colorSelectClicked() {
