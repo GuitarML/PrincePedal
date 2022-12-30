@@ -33,7 +33,7 @@ I built this pedal in a 1590B enclosure with custom "paint pour" technique by a 
 There are several differences between the Prince of Tone pedal by AnalogMan and my homebuilt clone, mainly due to available parts:
 - My homebuilt pedal is technically 1/2 of the King of Tone, so no internal dip switches for Low-Mid and Turbo
 - 20k tone pot instead of 25k, so slightly less range on the bass side of the tone knob
-- 22k resitor instead of 27k on the first op amp filter stage
+- 22k resistor instead of 27k on the first op amp filter stage
 - TL082 IC instead of JRC4580
 - The internal Treble trim pot was set to 50% for all my training recordings
 - No knob or switch labeling (didn't want to obscure the beautiful paint pour art)
