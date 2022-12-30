@@ -32,7 +32,9 @@ There are several differences between the Prince of Tone pedal by AnalogMan and 
 - 22k resitor instead of 27k on the first op amp filter stage
 - TL082 IC instead of JRC4580
 - The internal Treble trim pot was set to 50% for all my training recordings
+- No knob or switch labeling (didn't want to obscure the beautiful paint pour art)
 - A white LED brighter than the sun
+
 
 
 ## Build Instructions
