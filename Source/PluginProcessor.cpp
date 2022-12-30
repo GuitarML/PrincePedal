@@ -176,7 +176,7 @@ void PrinceAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer&
     // Amp =============================================================================
     if (fw_state == 1) {
 		//Apply default gain
-        buffer.applyGain(3.0);
+        //buffer.applyGain(3.0);
 		
         // resample to target sample rate
         dsp::AudioBlock<float> block(buffer);
