@@ -68,6 +68,7 @@ public:
 
     // Pedal/amp states
     int fw_state = 1; // 0 = off, 1 = on
+    int pauseVolume = 3;
 
     bool lstm_state = true;
     int current_model_index = 0;

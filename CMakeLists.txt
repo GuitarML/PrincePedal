@@ -26,7 +26,7 @@ endif()
 juce_add_plugin(Prince
     COMPANY_NAME GuitarML
     PLUGIN_MANUFACTURER_CODE GtML
-    PLUGIN_CODE Tsm3 
+    PLUGIN_CODE Pri3 
     FORMATS ${JUCE_FORMATS}
     ProductName "Prince"
     LV2_URI https://github.com/GuitarML/Prince

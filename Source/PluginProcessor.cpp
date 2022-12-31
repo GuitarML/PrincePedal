@@ -190,6 +190,16 @@ void PrinceAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer&
             buffer.applyGainRamp(0, (int) buffer.getNumSamples(), previousMasterValue, masterValue);
             previousMasterValue = masterValue;
         }
+        // Smooth pop sound when changing models
+        if (pauseVolume > 0) {
+            if (pauseVolume > 2)
+                buffer.applyGain(0.0);
+            else if (pauseVolume == 2)
+                buffer.applyGainRamp(0, (int)buffer.getNumSamples(), 0, masterValue * 1.2 / 2);
+            else
+                buffer.applyGainRamp(0, (int)buffer.getNumSamples(), masterValue * 1.2 / 2, masterValue * 1.2);
+            pauseVolume -= 1;
+        }
     }
 }
 
@@ -242,6 +252,7 @@ void PrinceAudioProcessor::setStateInformation (const void* data, int sizeInByte
 void PrinceAudioProcessor::setMode()
 {
     if (current_model_index ==0) {
+        pauseVolume = 3;
         MemoryInputStream jsonInputStream(BinaryData::od_json, BinaryData::od_jsonSize, false);
         nlohmann::json weights_json = nlohmann::json::parse(jsonInputStream.readEntireStreamAsString().toStdString());
         LSTM.reset();
@@ -250,6 +261,7 @@ void PrinceAudioProcessor::setMode()
         LSTM2.load_json3(weights_json);
 
     } else if (current_model_index == 1) {
+        pauseVolume = 3;
         MemoryInputStream jsonInputStream(BinaryData::boost_json, BinaryData::boost_jsonSize, false);
         nlohmann::json weights_json = nlohmann::json::parse(jsonInputStream.readEntireStreamAsString().toStdString());
         LSTM.reset();
@@ -258,6 +270,7 @@ void PrinceAudioProcessor::setMode()
         LSTM2.load_json3(weights_json);
 
     } else if (current_model_index == 2) {
+        pauseVolume = 3;
         MemoryInputStream jsonInputStream(BinaryData::dist_json, BinaryData::dist_jsonSize, false);
         nlohmann::json weights_json = nlohmann::json::parse(jsonInputStream.readEntireStreamAsString().toStdString());
         LSTM.reset();
