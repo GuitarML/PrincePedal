@@ -6,7 +6,7 @@ The Prince is a plugin of my homebuilt Prince of Tone style pedal, cloned using 
 
 ![app](https://github.com/GuitarML/PrincePedal/blob/main/resources/background.png)
 
-This plugin is intended as an experiment and an example of how a pedal/amp builder (hobbyist or professional) can faithfully recreate their work in the digital world using neural networks. 
+This plugin is intended as an example of how a pedal/amp builder (hobbyist or professional) can faithfully recreate their work in the digital world using neural networks. 
 
 ## Installing the plugin
 
