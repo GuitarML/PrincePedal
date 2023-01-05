@@ -29,7 +29,7 @@ juce_add_plugin(Prince
     PLUGIN_CODE Pri3 
     FORMATS ${JUCE_FORMATS}
     ProductName "Prince"
-    LV2_URI https://github.com/GuitarML/Prince
+    LV2URI https://github.com/GuitarML/Prince
     ICON_BIG resources/logo.png
     MICROPHONE_PERMISSION_ENABLED TRUE
 )
