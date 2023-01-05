@@ -57,4 +57,4 @@ $ git submodule update --init --recursive
 $ cmake -Bbuild
 $ cmake --build build --config Release
 ```
-The binaries will be located in `PrincePedal/build/PrincePedal_artefacts/`
+The binaries will be located in `PrincePedal/build/Prince_artefacts/`
